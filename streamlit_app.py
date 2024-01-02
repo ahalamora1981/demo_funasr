@@ -171,7 +171,7 @@ if __name__ == "__main__":
         frame_rate = 96000
         wav_audio_data = st_audiorec()
 
-        if wav_audio_data is not None:
+        if wav_audio_data:
             if st.button("开始转写"):
                 # 创建Wave_write对象
                 with wave.open(os.path.join(TEMP_DIR, 'temp.wav'), 'w') as wave_file:
