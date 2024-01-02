@@ -26,6 +26,9 @@ FRAMES = 1024               # 每帧的样本数，可以根据实际情况调�
 # FORMAT_TYPE = pyaudio.paInt16
 TEMP_DIR = 'temp'
 
+if TEMP_DIR not in os.listdir("./"):
+    os.makedirs(TEMP_DIR)
+
 def seconds_to_hms(seconds):
     hours, remainder = divmod(seconds, 3600)
     minutes, seconds = divmod(remainder, 60)
@@ -171,7 +174,7 @@ if __name__ == "__main__":
         if wav_audio_data is not None:
             if st.button("开始转写"):
                 # 创建Wave_write对象
-                with wave.open('temp/temp.wav', 'w') as wave_file:
+                with wave.open(os.path.join(TEMP_DIR, 'temp.wav'), 'w') as wave_file:
                     # 设置wav文件的参数
                     wave_file.setsampwidth(SAMPLE_WIDTH)
                     wave_file.setnchannels(CHANNELS)
@@ -183,7 +186,7 @@ if __name__ == "__main__":
                     
                     
                 load_file_and_start_main(
-                    saved_file_path='temp/temp.wav',
+                    saved_file_path=os.path.join(TEMP_DIR, 'temp.wav'),
                     format='wav',
                     frame_rate=frame_rate
                     )
