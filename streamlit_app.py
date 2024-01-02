@@ -133,12 +133,12 @@ async def main(audio_data):
                 st.stop()
 
 if __name__ == "__main__":
-    st.header("录音转写Demo(实时&全文)")
+    st.header("录音转写 DEMO")
     
     tab_1, tab_2 = st.tabs(["录音文件转写", "麦克风录音转写"])
     
     with tab_1:
-        st.subheader("录音文件转写 Demo :phone::arrow_right::page_facing_up:")
+        st.subheader("录音文件转写 :phone::arrow_right::page_facing_up:")
         st.write("##### 支持音频格式 :")
         st.write("**PCM** | 8K 采样率 | 16位 | 单声道")
         st.write("**WAV** | 不限采样率 | 16位 | 单声道 | 双声道的左声道")  
@@ -167,7 +167,7 @@ if __name__ == "__main__":
                 load_file_and_start_main(saved_file_path, format, frame_rate)
         
     with tab_2:
-        st.subheader("麦克风录音转写 Demo :studio_microphone::arrow_right::page_facing_up:")
+        st.subheader("麦克风录音转写 :studio_microphone::arrow_right::page_facing_up:")
         frame_rate = 96000
         wav_audio_data = st_audiorec()
 
