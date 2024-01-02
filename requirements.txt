@@ -1,3 +1,4 @@
 streamlit-audiorec
 pydub
 websockets
+python-ffmpeg
