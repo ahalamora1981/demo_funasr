@@ -139,9 +139,9 @@ if __name__ == "__main__":
     
     with tab_1:
         st.subheader("录音文件转写 :phone::arrow_right::page_facing_up:")
-        st.write("##### 支持音频格式 :")
+        st.write("##### 支持的音频格式 :")
         st.write("**PCM** | 8K 采样率 | 16位 | 单声道")
-        st.write("**WAV** | 不限采样率 | 16位 | 单声道 | 双声道的左声道")  
+        st.write("**WAV** | 不限采样率 | 16位 | 单声道 or 双声道的左声道")  
 
         fast = st.toggle('快速模式', value=True)    
         uploaded_file = st.file_uploader("上传音频文件", type=["wav", "pcm"])
